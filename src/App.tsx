@@ -17,6 +17,8 @@ import Profile from "./Auth/Profile";
 import List from "./generics/List";
 import RandomNumber from "./restriction/RandomNumber";
 import Toast from "./TemplateLiteral/Toast";
+import CustomButton from "./html/CustomButton";
+import Text from "./Polymorphic/Text";
 
 function App() {
   const fname = {
@@ -76,6 +78,17 @@ function App() {
       <List items={[1, 2, 3, 4]} onClick={(item) => console.log(item)} />
       <RandomNumber value={10} isPositive={true} />
       <Toast position="center" />
+      <CustomButton variant="primary">Primary Button</CustomButton>
+      <Text as="button" color="primary" size="md">
+        Button
+      </Text>
+      <Text color="secondary" as="h1">
+        Heading
+      </Text>
+      {/* Now we can use props of these html elements which we are passing in "as" prop */}
+      <Text size="lg" as="label" htmlFor="test">
+        Label
+      </Text>
     </div>
   );
 }
